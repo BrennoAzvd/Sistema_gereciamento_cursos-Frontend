@@ -16,6 +16,10 @@
         <mat-select formControlName="category">
           <mat-option value="Front-end">Front-End</mat-option>
           <mat-option value="Back-end">Back-End</mat-option>
+          <mat-option value="Full-Stack">Full-Stack</mat-option>
+          <mat-option value="UX/UI">UX/UI</mat-option>
+          <mat-option value="DevOps">DevOps</mat-option>
+          <mat-option value="Redes">Redes</mat-option>
         </mat-select>
         @if (form.get('category')?.invalid) {
         <mat-error>{{ formUtils.getErrorMessage(form, "category") }}</mat-error>

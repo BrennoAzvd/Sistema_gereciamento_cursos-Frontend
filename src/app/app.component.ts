@@ -10,5 +10,5 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     imports: [MatToolbarModule, RouterOutlet]
 })
 export class AppComponent {
-  title = 'crud-angular';
+  title = 'Serviço de Gerenciamento de Cursos';
 }
