@@ -4,6 +4,17 @@ mat-card {
   text-align: center;
 }
 
+mat-form-field{
+  position:relative;
+  margin-left:40%;
+  margin-top: 2%;
+  width: 13%;
+}
+
+section {
+  display: table;
+}
+
 .column-flex {
   display: flex;
   flex-direction: column;
@@ -17,3 +28,13 @@ mat-card {
   align-items: center;
   justify-content: center;
 }
+
+.button-buscar{
+  display: table-cell;
+  max-width: 600px;
+  position: relative;
+  margin-left: 5%;
+  text-decoration-color: azure;
+}
+
+

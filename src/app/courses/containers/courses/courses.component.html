@@ -1,5 +1,24 @@
 <mat-card>
-  <mat-toolbar color="primary">Cursos Disponíveis</mat-toolbar>
+  <mat-toolbar color="primary">Cursos Disponíveis
+  <mat-form-field (order)="onOrder()">
+    <mat-label>Ordenar por:</mat-label>
+    <mat-select [(value)]="selectedValue">
+      <mat-option value="none">Nenhum</mat-option>
+      <mat-option value="latest">Mais recente</mat-option>
+      <mat-option value="older">Mais antigo</mat-option>
+      <mat-option value="az">A-Z</mat-option>
+      <mat-option value="za">Z-A</mat-option>
+    </mat-select>
+
+  </mat-form-field>&nbsp;
+  {{selectedValue}}
+
+  <section>
+    <div class="button-buscar">
+      <button mat-raised-button>Buscar</button>
+    </div>
+  </section>
+</mat-toolbar>
 
   @if (courses$ | async; as courses) {
   <div class="example-container mat-elevation-z8">

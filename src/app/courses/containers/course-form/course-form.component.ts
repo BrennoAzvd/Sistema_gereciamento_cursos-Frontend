@@ -43,7 +43,7 @@ export class CourseFormComponent implements OnInit {
       name: [course.name, [Validators.required,
       Validators.minLength(5),
       Validators.maxLength(100)]],
-      description: [course.description, [Validators.required,
+      description: [course.description, [
         Validators.maxLength(500)
       ]],
       category: [course.category, [Validators.required]],

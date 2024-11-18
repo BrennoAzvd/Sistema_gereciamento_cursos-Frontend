@@ -1,8 +1,14 @@
 <mat-table [dataSource]="courses">
   <!-- Name Column -->
-  <ng-container matColumnDef="name">
+  <ng-container matColumnDef="name" >
     <mat-header-cell *matHeaderCellDef>Curso</mat-header-cell>
     <mat-cell *matCellDef="let course">{{ course.name }}</mat-cell>
+  </ng-container>
+
+  <!-- Description Column -->
+  <ng-container matColumnDef="description" class="container-texto">
+    <mat-header-cell *matHeaderCellDef>Descrição</mat-header-cell>
+    <mat-cell *matCellDef="let course">{{ course.description | truncate:60 }}</mat-cell>
   </ng-container>
 
   <!-- Category Column -->

@@ -15,9 +15,9 @@
         <textarea matInput placeholder="Descrição" formControlName="description" #description></textarea>
         <mat-label>Descrição (Opcional)</mat-label>
         <mat-hint align="end">{{ description.value.length || 0 }} / 500</mat-hint>
-        @if (form.get('description')?.invalid) {
+        <!-- @if (form.get('description')?.invalid) {
           <mat-error>{{ formUtils.getErrorMessage(form, "description") }}</mat-error>
-          }
+          } -->
       </mat-form-field>
 
       <mat-form-field class="full-width">

@@ -5,13 +5,16 @@ import { CategoryPipe } from '../../../shared/pipes/category.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { TruncatePipe } from '../../../shared/pipes/truncate.pipe';
+
+
 
 @Component({
     selector: 'app-courses-list',
     templateUrl: './courses-list.component.html',
     styleUrls: ['./courses-list.component.scss'],
     standalone: true,
-    imports: [MatTableModule, MatIconModule, MatButtonModule, CategoryPipe]
+    imports: [MatTableModule, MatIconModule, MatButtonModule, CategoryPipe, TruncatePipe]
 })
 export class CoursesListComponent implements OnInit {
 
@@ -20,7 +23,8 @@ export class CoursesListComponent implements OnInit {
   @Output() edit = new EventEmitter(false);
   @Output() remove = new EventEmitter(false);
 
-  readonly displayedColumns = ['name', 'category', 'actions'];
+  readonly displayedColumns = ['name', 'description', 'category', 'actions'];
+
 
   constructor() { }
 
@@ -39,3 +43,6 @@ export class CoursesListComponent implements OnInit {
   }
 
 }
+
+
+

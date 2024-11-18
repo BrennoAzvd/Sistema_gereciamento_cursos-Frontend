@@ -16,15 +16,22 @@ import { CoursesListComponent } from '../../components/courses-list/courses-list
 import { AsyncPipe } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+
+
 
 @Component({
     selector: 'app-courses',
     templateUrl: './courses.component.html',
     styleUrls: ['./courses.component.scss'],
     standalone: true,
-    imports: [MatCardModule, MatToolbarModule, CoursesListComponent, MatPaginatorModule, MatProgressSpinnerModule, AsyncPipe]
+    imports: [MatCardModule, MatToolbarModule, CoursesListComponent, MatPaginatorModule,
+      MatProgressSpinnerModule, AsyncPipe, MatFormFieldModule, MatSelectModule, MatButtonModule]
 })
 export class CoursesComponent implements OnInit {
+  selectedValue!: string;
 
   courses$: Observable<CoursePage> | null = null;
 
@@ -38,7 +45,7 @@ export class CoursesComponent implements OnInit {
     public dialog: MatDialog,
     private router: Router,
     private route: ActivatedRoute,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
   ) {
     this.refresh();
   }
@@ -69,6 +76,10 @@ export class CoursesComponent implements OnInit {
 
   onAdd() {
     this.router.navigate(['new'], { relativeTo: this.route });
+  }
+
+  onOrder(){
+    this.router.navigate(['order'], { relativeTo: this.route });
   }
 
   onEdit(course: Course) {
